@@ -1,4 +1,6 @@
+// Insert data for select options, radio buttons and checkboxes.
 const setup = () => {
+  // Insert countries as options for select.
   countries.forEach((country, index) => {
     const option = document.createElement('option');
     option.text = country;
@@ -6,6 +8,7 @@ const setup = () => {
     document.getElementById('country').appendChild(option);
   });
 
+  // Insert gender as radio buttons with label.
   gender.forEach((genderItem, index) => {
     let radio = document.createElement('input');
     const id = `gender${index}`;
@@ -25,6 +28,7 @@ const setup = () => {
     }
   });
 
+  // Insert hobbies as checkboxes with label.
   hobbies.forEach((hobby, index) => {
     let checkbox = document.createElement('input');
     const id = `hobby${index}`;
