@@ -97,6 +97,7 @@ function submitForm() {
       // Handle country special case.
       if (formElement === 'country') {
         formElementsValues[formElement] = countries[element.value];
+        if (element.value === "") formElementsValues[formElement] = "";
       }
       element.value = '';
     }
