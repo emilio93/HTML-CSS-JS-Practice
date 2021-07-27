@@ -24,6 +24,25 @@ const setup = () => {
       document.getElementById('gender').appendChild(br);
     }
   });
+
+  hobbies.forEach((hobby, index) => {
+    let checkbox = document.createElement('input');
+    const id = `hobby${index}`;
+    checkbox.setAttribute('type', 'checkbox');
+    checkbox.setAttribute('name', 'hobby');
+    checkbox.setAttribute('id', id);
+    checkbox.value = index;
+    document.getElementById('hobbies').appendChild(checkbox);
+
+    let label = document.createElement('label');
+    label.setAttribute('for', id);
+    label.innerHTML = hobby;
+    document.getElementById('hobbies').appendChild(label);
+    if (index < hobbies.length) {
+      const br = document.createElement('br');
+      document.getElementById('hobbies').appendChild(br);
+    }
+  });
 }
 
 function submitForm() {
