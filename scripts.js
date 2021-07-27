@@ -72,6 +72,8 @@ function submitForm() {
             radio.checked = false;
             formElementsValues[formElement] = gender[index];
             break;
+          } else if (index === element.length - 1) {
+            formElementsValues[formElement] = "";
           }
         }
         continue;
@@ -101,6 +103,15 @@ function submitForm() {
   }
 
   // Print form values.
+  document.getElementById('response').innerHTML = '';
+  for (const key in formElementsValues) {
+    if (Object.hasOwnProperty.call(formElementsValues, key)) {
+      const element = formElementsValues[key];
+      const p = document.createElement('p');
+      p.innerHTML = `${key}: ${element}`;
+      document.getElementById('response').appendChild(p);
+    }
+  }
   console.log(formElementsValues);
 }
 
