@@ -1,4 +1,12 @@
-
+const setup = () => {
+  countries.forEach((country, index) => {
+      console.log(country);
+      const option = document.createElement('option');
+      option.text = country;
+      option.value = index;
+      document.getElementById('country').appendChild(option);
+  });
+};
 
 
 function submitForm() {
@@ -14,6 +22,8 @@ function submitForm() {
     
     console.log(user);
   }
+
+setup();
   
   /*
   AGREGUEMOS MAS CAMPOS
