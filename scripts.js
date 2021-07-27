@@ -19,7 +19,7 @@ const setup = () => {
     label.innerHTML = genderItem;
     document.getElementById('gender').appendChild(label);
     if (index < gender.length) {
-      const br = document.createElement('br')
+      const br = document.createElement('br');
       document.getElementById('gender').appendChild(br);
     }
   });
