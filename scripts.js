@@ -6,6 +6,20 @@ const setup = () => {
     option.value = index;
     document.getElementById('country').appendChild(option);
   });
+
+  gender.forEach((genderItem, index) => {
+    let radio = document.createElement('input');
+    const id = `gender${index}`;
+    radio.setAttribute('type', 'radio');
+    radio.setAttribute('name', 'gender');
+    radio.setAttribute('id', id);
+    document.getElementById('gender').appendChild(radio);
+    
+    let label = document.createElement('label');
+    label.setAttribute('for', id);
+    label.innerHTML = genderItem;
+    document.getElementById('gender').appendChild(label);
+  });
 }
 
 function submitForm() {
