@@ -50,17 +50,54 @@ const setup = () => {
 }
 
 function submitForm() {
-  alert('Felicidades, te has registrado exitosamente');
-  document.getElementById('email').value = '';
-  document.getElementById('name').value = '';
-  document.getElementById('birthdate').value = '';
+  const formElements = {
+    email: document.getElementById('email'),
+    name: document.getElementById('name'),
+    birthdate: document.getElementById('birthdate'),
+    country: document.getElementById('country'),
+    gender: document.getElementsByName('gender'),
+    hobbies: document.getElementsByName('hobby'),
+  };
 
-  const user = {
-    name: 'hernan',
-    lastName: 'Brenes',
+  const formElementsValues = {};
+  for (const formElement in formElements) {
+    if (Object.hasOwnProperty.call(formElements, formElement)) {
+      const element = formElements[formElement];
+
+      // Handle gender special case.
+      if (formElement === 'gender') {
+        for (let index = 0; index < element.length; index++) {
+          const radio = element[index];
+          if (radio.checked) {
+            radio.checked = false;
+            formElementsValues[formElement] = gender[index];
+            break;
+          }
+        }
+        continue;
+      }
+      
+      // Handle hobbies special case.
+      if (formElement === 'hobbies') {
+        formElementsValues[formElement] = [];
+        for (let index = 0; index < element.length; index++) {
+          const checkbox = element[index];
+          if (checkbox.checked) {
+            checkbox.checked = false;
+            formElementsValues[formElement].push(hobbies[index]);
+          }
+        }
+        continue;
+      }
+
+      // Handle other elements.
+      formElementsValues[formElement] = element.value;
+      element.value = '';
+    }
   }
 
-  console.log(user);
+  // Print form values.
+  console.log(formElementsValues);
 }
 
 setup();
