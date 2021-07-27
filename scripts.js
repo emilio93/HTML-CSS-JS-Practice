@@ -1,28 +1,28 @@
 const setup = () => {
   countries.forEach((country, index) => {
-    console.log(country)
-    const option = document.createElement('option')
-    option.text = country
-    option.value = index
-    document.getElementById('country').appendChild(option)
-  })
+    console.log(country);
+    const option = document.createElement('option');
+    option.text = country;
+    option.value = index;
+    document.getElementById('country').appendChild(option);
+  });
 }
 
 function submitForm() {
-  alert('Felicidades, te has registrado exitosamente')
-  document.getElementById('email').value = ''
-  document.getElementById('name').value = ''
-  document.getElementById('birthdate').value = ''
+  alert('Felicidades, te has registrado exitosamente');
+  document.getElementById('email').value = '';
+  document.getElementById('name').value = '';
+  document.getElementById('birthdate').value = '';
 
   const user = {
     name: 'hernan',
     lastName: 'Brenes',
   }
 
-  console.log(user)
+  console.log(user);
 }
 
-setup()
+setup();
 
 /*
   AGREGUEMOS MAS CAMPOS
