@@ -12,6 +12,7 @@ const setup = () => {
     radio.setAttribute('type', 'radio');
     radio.setAttribute('name', 'gender');
     radio.setAttribute('id', id);
+    radio.value = index;
     document.getElementById('gender').appendChild(radio);
     
     let label = document.createElement('label');
