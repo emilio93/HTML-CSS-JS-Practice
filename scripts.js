@@ -12,7 +12,7 @@ const setup = () => {
   gender.forEach((genderItem, index) => {
     const container = document.createElement('div');
 
-    let radio = document.createElement('input');
+    const radio = document.createElement('input');
     const id = `gender${index}`;
     radio.setAttribute('type', 'radio');
     radio.setAttribute('name', 'gender');
@@ -20,7 +20,7 @@ const setup = () => {
     radio.value = index;
     container.appendChild(radio);
     
-    let label = document.createElement('label');
+    const label = document.createElement('label');
     label.setAttribute('for', id);
     label.innerHTML = genderItem;
     container.appendChild(label);
@@ -31,7 +31,7 @@ const setup = () => {
   hobbies.forEach((hobby, index) => {
     const container = document.createElement('div');
 
-    let checkbox = document.createElement('input');
+    const checkbox = document.createElement('input');
     const id = `hobby${index}`;
     checkbox.setAttribute('type', 'checkbox');
     checkbox.setAttribute('name', 'hobby');
@@ -39,7 +39,7 @@ const setup = () => {
     checkbox.value = index;
     container.appendChild(checkbox);
 
-    let label = document.createElement('label');
+    const label = document.createElement('label');
     label.setAttribute('for', id);
     label.innerHTML = hobby;
     container.appendChild(label);
