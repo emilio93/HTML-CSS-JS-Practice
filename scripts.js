@@ -10,36 +10,42 @@ const setup = () => {
 
   // Insert gender as radio buttons with label.
   gender.forEach((genderItem, index) => {
+    const container = document.createElement('div');
+
     let radio = document.createElement('input');
     const id = `gender${index}`;
     radio.setAttribute('type', 'radio');
     radio.setAttribute('name', 'gender');
     radio.setAttribute('id', id);
     radio.value = index;
-    document.getElementById('gender').appendChild(radio);
+    container.appendChild(radio);
     
     let label = document.createElement('label');
     label.setAttribute('for', id);
     label.innerHTML = genderItem;
-    document.getElementById('gender').appendChild(label);
+    container.appendChild(label);
+    document.getElementById('gender').appendChild(container);
   });
-
+  
   // Insert hobbies as checkboxes with label.
   hobbies.forEach((hobby, index) => {
+    const container = document.createElement('div');
+
     let checkbox = document.createElement('input');
     const id = `hobby${index}`;
     checkbox.setAttribute('type', 'checkbox');
     checkbox.setAttribute('name', 'hobby');
     checkbox.setAttribute('id', id);
     checkbox.value = index;
-    document.getElementById('hobbies').appendChild(checkbox);
+    container.appendChild(checkbox);
 
     let label = document.createElement('label');
     label.setAttribute('for', id);
     label.innerHTML = hobby;
-    document.getElementById('hobbies').appendChild(label);
+    container.appendChild(label);
+    document.getElementById('hobbies').appendChild(container);
   });
-}
+};
 
 function submitForm() {
   const formElements = {

@@ -1,0 +1,43 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.user-form-title, form.main-form, .form-response {
+    text-align: center;
+    margin: 0 auto;
+}
+.user-input-item {
+    margin-bottom: 10px;
+}
+
+input[type=text], 
+input[type=email], 
+input[type=number], 
+input[type=date], 
+textarea, 
+select {
+    padding: 5px;
+}
+
+.gender-radios, .hobbies-checkboxes {
+    display: flex;
+    width: 100%;
+    /* Align Items Vertically */
+    align-items: center; 
+    /* Align Items Horizontally (with equal space in between each of them */
+    justify-content: center; 
+  }
+  
+  .gender-radios > div, .hobbies-checkboxes > div {
+    display: flex;
+  }
+  
+  .gender-radios > div > div, .hobbies-checkboxes > div > div{
+    margin: 0 5px;
+    padding: 0 5px;
+  }
