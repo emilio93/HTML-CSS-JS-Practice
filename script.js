@@ -3,7 +3,7 @@
 
 function submitForm() {
     alert('Felicidades, te has registrado exitosamente'); 
-    document.getElementById('username').value = '';
+    document.getElementById('email').value = '';
     document.getElementById('name').value = '';
     document.getElementById('birthdate').value = '';
   
