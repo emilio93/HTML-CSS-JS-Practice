@@ -1,6 +1,5 @@
 const setup = () => {
   countries.forEach((country, index) => {
-    console.log(country);
     const option = document.createElement('option');
     option.text = country;
     option.value = index;
