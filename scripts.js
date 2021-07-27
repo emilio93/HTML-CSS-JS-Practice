@@ -43,12 +43,12 @@ const setup = () => {
 
 function submitForm() {
   const formElements = {
-    email: document.getElementById('email'),
-    name: document.getElementById('name'),
-    birthdate: document.getElementById('birthdate'),
-    country: document.getElementById('country'),
-    gender: document.getElementsByName('gender'),
-    hobbies: document.getElementsByName('hobby'),
+    "Correo": document.getElementById('email'),
+    "Nombre completo": document.getElementById('name'),
+    "Fecha de nacimiento": document.getElementById('birthdate'),
+    "Pais": document.getElementById('country'),
+    "Género": document.getElementsByName('gender'),
+    "Hobbies": document.getElementsByName('hobby'),
   };
 
   const formElementsValues = {};
@@ -57,7 +57,7 @@ function submitForm() {
       const element = formElements[formElement];
 
       // Handle gender special case.
-      if (formElement === 'gender') {
+      if (formElement === 'Género') {
         for (let index = 0; index < element.length; index++) {
           const radio = element[index];
           if (radio.checked) {
@@ -72,7 +72,7 @@ function submitForm() {
       }
       
       // Handle hobbies special case.
-      if (formElement === 'hobbies') {
+      if (formElement === 'Hobbies') {
         formElementsValues[formElement] = [];
         for (let index = 0; index < element.length; index++) {
           const checkbox = element[index];
@@ -87,7 +87,7 @@ function submitForm() {
       // Handle other elements.
       formElementsValues[formElement] = element.value;
       // Handle country special case.
-      if (formElement === 'country') {
+      if (formElement === 'Pais') {
         formElementsValues[formElement] = countries[element.value];
         if (element.value === "") formElementsValues[formElement] = "";
       }
