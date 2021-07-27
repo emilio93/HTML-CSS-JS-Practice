@@ -256,3 +256,10 @@ const gender = [
   "Mujer",
   "Otro"
 ];
+
+const hobbies = [
+  "Caminar",
+  "Netflix",
+  "Cocinar",
+  "Ir de paseo"
+];
