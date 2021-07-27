@@ -22,10 +22,6 @@ const setup = () => {
     label.setAttribute('for', id);
     label.innerHTML = genderItem;
     document.getElementById('gender').appendChild(label);
-    if (index < gender.length) {
-      const br = document.createElement('br');
-      document.getElementById('gender').appendChild(br);
-    }
   });
 
   // Insert hobbies as checkboxes with label.
@@ -42,10 +38,6 @@ const setup = () => {
     label.setAttribute('for', id);
     label.innerHTML = hobby;
     document.getElementById('hobbies').appendChild(label);
-    if (index < hobbies.length) {
-      const br = document.createElement('br');
-      document.getElementById('hobbies').appendChild(br);
-    }
   });
 }
 
