@@ -8,12 +8,19 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+
+/*******************************************************************************
+
+FORM CONTENT
+
+*******************************************************************************/
+
 .user-form-title,
-form.main-form,
-.form-response {
+form.main-form {
   text-align: center;
   margin: 0 auto;
 }
+
 .user-input-item {
   margin-bottom: 10px;
 }
@@ -25,15 +32,15 @@ input[type='date'],
 textarea,
 select {
   padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 .gender-radios,
 .hobbies-checkboxes {
   display: flex;
   width: 100%;
-  /* Align Items Vertically */
   align-items: center;
-  /* Align Items Horizontally (with equal space in between each of them */
   justify-content: center;
 }
 
@@ -48,6 +55,51 @@ select {
   padding: 0 5px;
 }
 
+/*******************************************************************************
+
+TABLE
+
+*******************************************************************************/
+
+.user-table {
+    margin-top: 15px;
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1 1 auto;
+}
+
+.user-table-header, .user-table-row {
+    display: flex;
+    flex-flow: row nowrap;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.user-table-header {
+    font-weight: bolder;
+    background-color: #999;
+    padding: 5px 0px 5px;
+}
+
+.user-table-row {
+    padding: 3px 0px 3px;
+    border-bottom: 1px solid #000;
+}
+
+.user-table-header-cell, .user-table-row-cell { 
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 0 5px;
+    padding: 0 5px;
+}
+
+/*******************************************************************************
+
+BUTTONS
+
+*******************************************************************************/
+
 .primary-button, .secondary-button {
     padding: 15px;
     border: 0;
@@ -61,7 +113,6 @@ select {
 .secondary-button {
     background-color: rgb(255, 122, 122);
 }
-
 
 .primary-button:hover {
     background-color: rgb(60, 60, 255);
