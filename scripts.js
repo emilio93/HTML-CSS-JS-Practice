@@ -103,12 +103,6 @@ const getUserRow = (userData) => {
   return userRow;
 };
 
-const addTableRow = (formElementsValues) => {
-  const userRow = getUserRow(formElementsValues);
-  const tableBody = document.getElementById("user-table");
-  tableBody.appendChild(userRow);
-};
-
 // Insert data for select options, radio buttons and checkboxes.
 const setup = () => {
 
@@ -181,7 +175,11 @@ function submitForm() {
     element.value = "";
   }
 
-  addTableRow(formElementsValues);
+  // Add the new row to the table.
+  const userRow = getUserRow(formElementsValues);
+  const tableBody = document.getElementById("user-table");
+  tableBody.appendChild(userRow);
+
   // Store user data and DOM element for the table row.
   userRows.push({
     userData: formElementsValues,
