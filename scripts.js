@@ -14,6 +14,7 @@ const obtainFormData = () => {
   return formElements;
 };
 
+// Obtain array of DOM element for countries options.
 const getCountriesOptions = () => {
   const countriesOptions = [];
   countries.forEach((country, index) => {
@@ -25,6 +26,7 @@ const getCountriesOptions = () => {
   return countriesOptions;
 };
 
+// Obtain array of DOM element for gender radio button.
 const getGenderRadios = () => {
   const genderRadios = [];
   gender.forEach((genderItem, index) => {
@@ -47,6 +49,7 @@ const getGenderRadios = () => {
   return genderRadios;
 };
 
+// Obtain array of DOM element for hobby checkbox.
 const getHobbiesCheckboxes = () => {
   const hobbiesCheckboxes = [];
   hobbies.forEach((hobby, index) => {
@@ -179,6 +182,7 @@ function submitForm() {
   }
 
   addTableRow(formElementsValues);
+  // Store user data and DOM element for the table row.
   userRows.push({
     userData: formElementsValues,
     userRow: userRow
