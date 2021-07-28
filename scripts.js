@@ -1,3 +1,6 @@
+// Array to store the user data.
+const userRows = [];
+
 // Obtain form data on demand.
 const obtainFormData = () => {
   const formElements = {
@@ -176,6 +179,11 @@ function submitForm() {
   }
 
   addTableRow(formElementsValues);
+  userRows.push({
+    userData: formElementsValues,
+    userRow: userRow
+  });
+  console.log(userRows);
 }
 
 setup();
