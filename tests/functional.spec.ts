@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import * as path from 'path';
 
-const URL = `file:///${path.dirname(__dirname)}/index.html`;
+const URL = `file:///${path.dirname(__dirname)}/src/index.html`;
 const CHECKBOX_QTY = 4;
 const ROWS_TO_INSERT = 20;
 
