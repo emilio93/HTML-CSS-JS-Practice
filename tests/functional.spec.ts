@@ -22,23 +22,27 @@ const submitRandomValues = async (page) => {
     }
   };
 
-  await page.fill('#email', randomValues.email);
-  await page.fill('#name', randomValues.name);
-  const date = randomValues.date;
-  const dateStr = `${date.year}-${date.month<10?'0':''}${date.month}-${date.day<10?'0':''}${date.day}`
-  await page.fill('#birthdate', dateStr);
-  await page.selectOption('#country', `${randomValues.country}`);
-  await page.check(`#gender${randomValues.gender}`);
-  for (let index = 0; index < CHECKBOX_QTY; index++) {
-    if (Math.round(Math.random())){
-      await page.check(`#hobby${index}`);
-      randomValues.hobby.push(true);
-    } else {
-      randomValues.hobby.push(false);
+  if (Math.round(Math.random())) await page.fill('#email', randomValues.email);
+  if (Math.round(Math.random())) await page.fill('#name', randomValues.name);
+  if (Math.round(Math.random())){
+    const date = randomValues.date;
+    const dateStr = `${date.year}-${date.month<10?'0':''}${date.month}-${date.day<10?'0':''}${date.day}`
+    await page.fill('#birthdate', dateStr);
+  }
+  if (Math.round(Math.random())) await page.selectOption('#country', `${randomValues.country}`);
+  if (Math.round(Math.random())) await page.check(`#gender${randomValues.gender}`);
+  if (Math.round(Math.random())) {
+    for (let index = 0; index < CHECKBOX_QTY; index++) {
+      if (Math.round(Math.random())) {
+        await page.check(`#hobby${index}`);
+        randomValues.hobby.push(true);
+      } else {
+        randomValues.hobby.push(false);
+      }
     }
   }
-
   await page.click('#registerButton');
+  return randomValues;
 };
 
 test('basic test', async ({ page }) => {
